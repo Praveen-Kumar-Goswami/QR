@@ -3,3 +3,4 @@ qrcode
 cryptography
 opencv-python
 pyzbar
+gunicorn
