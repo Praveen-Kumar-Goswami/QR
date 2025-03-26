@@ -1,0 +1,5 @@
+Flask
+qrcode
+cryptography
+opencv-python
+pyzbar
