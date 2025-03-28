@@ -5,7 +5,6 @@ import hashlib
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import serialization, hashes
 import cv2
-from pyzbar.pyzbar import decode
 from PIL import Image
 import cv2
 
