@@ -3,6 +3,5 @@ gunicorn==21.2.0
 qrcode==7.4.2
 cryptography==42.0.5
 opencv-python-headless==4.9.0.80
-pyzbar==0.1.9
 pillow==10.2.0
 numpy<2  # Ensures compatibility with OpenCV and other modules
