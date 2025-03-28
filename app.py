@@ -6,6 +6,8 @@ from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import serialization, hashes
 import cv2
 from pyzbar.pyzbar import decode
+from PIL import Image
+import cv2
 
 app = Flask(__name__)
 
@@ -55,11 +57,11 @@ def generate_qr(data, signature):
 
 # Decode QR Code
 def decode_qr(image_path):
-    img = cv2.imread(image_path)
-    qr_data = decode(img)
-    if qr_data:
-        return qr_data[0].data.decode('utf-8')
-    return None
+    img = Image.open(image_path)
+    img = np.array(img)  # Convert PIL Image to NumPy array
+    qr_detector = cv2.QRCodeDetector()
+    data, _, _ = qr_detector.detectAndDecode(img)  # Extract QR code data
+    return data if data else None
 
 
 # Verify Signature
